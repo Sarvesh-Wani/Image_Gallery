@@ -1,0 +1,71 @@
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing: border-box;
+}
+#wrapper{
+    height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.container{
+    height:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px;
+}
+.container h1{ /*for h1 of conatainer*/
+    text-align:center;
+    margin:20px 0;
+    margin-bottom:20px;
+    font-size: 3rem;
+}
+.gallery{
+    padding-top: 5px;
+    display:flex;
+    flex-wrap:wrap;/*pics niche aa gaye*/
+    justify-content:space-between;
+}
+.card{
+    width:32%; /* 3 columns with space */
+    position:relative;/*to overlap text */
+    margin-bottom:20px;
+    border-radius:10px;
+    overflow:hidden;
+}
+.card img{
+    width:100%;
+    height:100%;
+    filter:grayscale(100%);
+    box-shadow:0 0 20px black;
+    object-fit:cover;
+}
+.card:hover{
+    transform:scale(1.03);
+    transition:0.5s;
+    filter:drop-shadow(0 0 10px #333);
+    /* filter:grayscale(0%); Dont work here need to do separately*/ 
+}
+.card:hover img{
+    filter:grayscale(0%);
+}
+.card figcaption{
+    position:absolute; /*to bring text over image*/
+    text-align: center;
+    bottom:0;
+    left:0;
+    padding:25px;
+    width:100%;  /*of its parent i.e card*/
+    height:20%;  /* of card*/
+    font-size:16px;
+    font-weight: 500;
+    color:#fff;
+    opacity:0; /*Invisible*/
+    border-radius:0 0 10px 10px;
+    background: linear-gradient(0deg,rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
+    transition:0.3s;   
+}
+.card:hover figcaption{
+    opacity:1; /*highest - visible*/
+    transform:scale(1.03);
+}
